@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+
+@* @using System; *@
+
+@model AnimalShelter.Models.Animal
+@* A model directive tells our view what type of data will be passed into the view from the controller route. NAMESPACE
+  then CLASS *@
+<h1>Enter the information for your Animals below: </h1>
+@using (Html.BeginForm())
+//sends an HTTP POST request to CREATE() route ("/Animals/Create")
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type)
+
+  @Html.LabelFor(model => model.Gender)
+  @Html.TextBoxFor(model => model.Gender)
+
+  @Html.LabelFor(model => model.DateOfAdmit)
+  @Html.TextBoxFor(model => model.DateOfAdmit)
+
+  @Html.LabelFor(model => model.Breed)
+  @Html.TextBoxFor(model => model.Breed)
+
+  <input type="submit" value="Add new animal" />
+}
+<p>@Html.ActionLink("Show all Animals", "Index")</p>

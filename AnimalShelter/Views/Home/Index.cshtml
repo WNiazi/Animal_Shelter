@@ -1,0 +1,11 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>Welcome to the Animal Shelter!</h1>
+@* this states see all the animal, from the index page at home and directs them to animals page? *@
+<p>@Html.ActionLink("See all animals", "Index", "Animals")</p>
+@* 1st : displays text for link
+  2nd: target action in controller (index function in the animals)
+  3rd : optional , name of controller without controller attached to it. so this takes us to animal in animal controller.
+*@
